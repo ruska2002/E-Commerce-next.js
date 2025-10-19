@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from 'next/image';
-import styles from './page.module.css';
+import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/features/cartSlice";
+import styles from "./page.module.css"
 
 
 
@@ -10,13 +12,19 @@ interface Product {
   id: number;
   title: string;
   price: number;
-  description: string;
   image: string;
 }
 
 export default function ProductsPage() {
+ const dispatch = useDispatch();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+
+const handleAdd = (product: Product) => {
+    dispatch(addToCart(product)); 
+  };
+
+
 
   useEffect(() => {
     async function fetchProducts() {
@@ -33,20 +41,21 @@ export default function ProductsPage() {
     fetchProducts();
   }, []);
 
-  if (loading) return <Image className={styles.loading} src="/loading.gif" alt="Loading..." width={200} height={200} />;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className={styles.productsPage}>
       <p>View all products</p>
       <div className={styles.cards}>
-        {products.map((product: Product) => (
-        <div className={styles.card} key={product.id}>
-          <Image src={product.image} alt={product.title} width={200} height={200} />
-          <h3>${product.price}</h3>
-          <h3>{product.title}</h3>
-          <button className={styles.buyButton}>buy now</button>
-        </div>
-      ))}</div>
+        {products.map((product) => (
+          <div key={product.id} className={styles.card}>
+            <Image src={product.image} alt={product.title} width={150} height={150} />
+               <h3>${product.price}</h3>
+            <h3>{product.title}</h3>
+            <button onClick={() => handleAdd(product)}>Add to Cart</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -31,6 +31,10 @@ header a {
   gap: 10px;
 }
 
+.cart{
+  margin-top: -4px;
+}
+
 footer{
   text-transform: uppercase;
   text-align: center;

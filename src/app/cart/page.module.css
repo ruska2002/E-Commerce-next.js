@@ -1,0 +1,32 @@
+.cartTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.cartAbout {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  max-width: 1000px; 
+}
+
+.cartAbout2{
+    display: flex;
+    gap:200px
+}
+
+.Hr {
+  width: 90%;
+  max-width: 1000px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin: 10px 0;
+}
+
