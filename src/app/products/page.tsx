@@ -2,34 +2,41 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "./../../store/store";
 import { addToCart } from "../../store/features/cartSlice";
-import styles from "./page.module.css"
-
-
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-}
+import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
+import { Product } from '../../store/interfaces';
 
 export default function ProductsPage() {
- const dispatch = useDispatch();
+  const router = useRouter()
+  const dispatch = useAppDispatch();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
-const handleAdd = (product: Product) => {
-    dispatch(addToCart(product)); 
+  const handleAdd = (product: Product) => {
+  dispatch(addToCart({
+    id: product.id,
+    title: product.title,
+    price: product.price,
+    description: "", 
+    image: product.image,
+    qty: 1,
+    rating: product.rating,
+  }));
+};
+
+
+
+   const handleClick = (id: number) => {
+    router.push(`/products/${id}`); 
   };
-
-
 
   useEffect(() => {
     async function fetchProducts() {
       try {
         const res = await fetch("/api/products");
+        
         const data = await res.json();
         setProducts(data);
       } catch (error) {
@@ -48,11 +55,22 @@ const handleAdd = (product: Product) => {
       <p>View all products</p>
       <div className={styles.cards}>
         {products.map((product) => (
-          <div key={product.id} className={styles.card}>
-            <Image src={product.image} alt={product.title} width={150} height={150} />
-               <h3>${product.price}</h3>
+          <div key={product.id} className={styles.card} onClick={() => handleClick(product.id)} 
+            style={{ cursor: "pointer" }}>
+            <Image
+              src={product.image}
+              alt={product.title}
+              width={150}
+              height={150}
+            />
+            <h3>${product.price}</h3>
             <h3>{product.title}</h3>
-            <button onClick={() => handleAdd(product)}>Add to Cart</button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleAdd(product);
+              }}
+            >Add to Cart</button>
           </div>
         ))}
       </div>

@@ -12,7 +12,6 @@ main {
   flex: 1; 
 }
 
-
 header{
   display: flex;
   align-items: center;
@@ -31,9 +30,6 @@ header a {
   gap: 10px;
 }
 
-.cart{
-  margin-top: -4px;
-}
 
 footer{
   text-transform: uppercase;
@@ -46,4 +42,38 @@ footer{
 
 footer p{
   text-transform: uppercase;
+}
+
+
+.cartIcon {
+  top:-4px;
+  position: relative;   
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;             
+  text-decoration: none;
+  color:rgb(61, 58, 58);       
+  font-weight: 500;
+}
+
+
+.CartIcon {
+  position: absolute;           
+  right: -6px;         
+  width: 16px;
+  height: 16px;
+  top: -6px;
+  background-color: rgb(241, 31, 23);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.icon {
+  display: inline-block;
 }

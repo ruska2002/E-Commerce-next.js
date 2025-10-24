@@ -1,26 +1,27 @@
-"use client"
-import { Provider } from "react-redux";
 import "./globals.css";
-import Link from "next/link";
-import { store } from "@/store/store";
+import Providers from "../components/Provider"; 
+import Header from "../components/Header";  
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: "My Store",
+  description: "Next.js Redux Store Example",
+  icons: {
+    icon: "/wicker-basket.png", 
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
-      <Provider store={store}>
-          <header>
-            <Link href="/">MyStore</Link>
-            <nav className="navbar">
-              <Link href="/">Home</Link>
-              <Link href="/products">Products</Link>
-              <Link className="cart" href="/cart">Cart 🛒</Link>
-            </nav>
-          </header>
-
-          <main>{children}</main>
-          <footer>© 2025 All rights reserved.</footer>
-        </Provider>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

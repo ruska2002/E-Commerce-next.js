@@ -1,32 +1,145 @@
-.cartTitle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.cartContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-
-.cartAbout {
-  display: flex;
-  justify-content: space-between;
-  width: 100%; 
-  max-width: 1000px; 
-}
-
-.cartAbout2{
-    display: flex;
-    gap:200px
-}
-
-.Hr {
+ .cartPage {
   width: 90%;
   max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+ 
+} 
+
+.cartTopBox {
+  background-color: #fafafa;    
+  padding: 20px;                  
+  border-radius: 12px;             
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;            
+}
+
+
+ .hr {
   border: none;
-  border-bottom: 2px solid #ccc;
-  margin: 10px 0;
+  border-bottom: 1px solid #ccc;
+  margin: 5px 0 15px 0;
+} 
+
+
+.cartHeader,
+.cartRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cartHeader {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.itemColumn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.priceColumn,
+.qtyColumn,
+.totalColumn,
+.removeColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qtyColumn button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.removeColumn button {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4f;
+  cursor: pointer;
+  font-size: 18px;
+}
+  .priceBox {
+  width: 300px;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: auto;    
+  margin-bottom: 10px;  
+ }
+ 
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.hrMini {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 5px 0;
+}
+
+.addCoupon {
+ color: #ff4d4f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.grandTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.grandTotal h1 {
+  font-size: 22px;
+  color: #222;
+  margin: 0;
+}
+
+.shippinglogo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ .checkOut{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+ }
+.checkOut button{
+  background-color: rgb(126, 118, 48);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.shippingText{
+  font-size: 13px;
+  color: rgb(126, 118, 48);
 }
 
