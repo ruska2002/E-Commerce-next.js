@@ -1,7 +1,7 @@
 .homePage{
   background-image: url('/cart.jpg');
   background-size: cover;
-background-position: center;
+  background-position: center;
 background-repeat: no-repeat;
   display: flex;
   flex-direction: column;

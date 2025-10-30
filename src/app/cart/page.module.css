@@ -142,4 +142,8 @@
   font-size: 13px;
   color: rgb(126, 118, 48);
 }
-
+.checkout a{
+  text-decoration: none;
+  color: white;
+  
+}

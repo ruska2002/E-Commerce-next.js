@@ -20,8 +20,6 @@ export default function Header() {
           )}
           <span className="icon">Cart 🛒</span>
         </Link>
-        <Link href="/SingUp">SingUp</Link>
-        <Link href="/SingIn">SingIn</Link>
       </nav>
     </header>
   );

@@ -17,7 +17,6 @@
     text-align: end;
     margin-right: 50px;
      color:rgb(61, 58, 58); 
-  
 }
 .productsPage img {
   display: block;
@@ -55,3 +54,51 @@
   bottom: 16px;
 }
 
+
+
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+
+  .card {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .productsPage p {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .buyButtons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buyButton,
+  .SeeButton {
+    width: 100%;
+    height: 45px;
+  }
+}
+
+
+@media (min-width: 560px) and (max-width: 685px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px;
+    gap: 25px;
+  }
+
+  .productsPage p {
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  .buyButton,
+  .SeeButton {
+    width: 130px;
+  }
+}

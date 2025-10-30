@@ -1,7 +1,7 @@
 import "./globals.css";
 import Providers from "../components/Provider"; 
 import Header from "../components/Header";  
-
+import Footer from "../components/Footer";
 export const metadata = {
   title: "My Store",
   description: "Next.js Redux Store Example",
@@ -21,6 +21,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

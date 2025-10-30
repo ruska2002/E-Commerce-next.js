@@ -48,7 +48,25 @@ export default function ProductsPage() {
     fetchProducts();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "80vh",
+      }}
+    >
+      <Image
+        src="/loading.gif"
+        alt="loading gif"
+        width={100}
+        height={100}
+      />
+    </div>
+  );
+
 
   return (
     <div className={styles.productsPage}>

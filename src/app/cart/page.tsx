@@ -82,8 +82,12 @@ export default function CartPage() {
         </div>
         <hr className={style.hrMini} />
         <div className={style.checkOut}>
-          <div className={style.shippinglogo}><p className={style.shippingText}>Congrats, you are eligible for <strong>free shipping</strong></p> <Image src="/delivery.png" alt="shipping" width={40} height={40} />
-          <div><Link href="/cart/payment">Proceed to Checkout</Link></div></div>
+          <div className={style.shippinglogo}>
+            <p className={style.shippingText}>Congrats, you are eligible for <strong>free shipping</strong></p> <Image src="/delivery.png" alt="shipping" width={40} height={40} />
+            <div>
+              <button className={style.checkout}><Link href="/cart/payment">Proceed to Checkout</Link></button>
+            </div>
+          </div>
         </div>
       </div>
       }
